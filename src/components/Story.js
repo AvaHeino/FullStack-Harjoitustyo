@@ -1,6 +1,8 @@
 import React from 'react'
 import flingos from './flingos.jpg'
 import ball from './ball.jpg'
+import StoryImages from './StoryImages'
+
 const images = [
 {
 	id: 1,
@@ -14,16 +16,18 @@ const images = [
 class Story extends React.Component {
 	constructor(props){
 		super(props)
-		this.stage = {
+		this.state = {
 			gameStage: this.props.gameStage
 		}
 	}
+	
 	render(){
+
+		const stageImages = images.filter(img => img.id === this.state.gameStage)
+
 		return(
 			<div className = 'story'>
-				<p>I am a story</p>
-				<img src={images[0].link} height="42" width="42" alt='a ball' />
-
+				<StoryImages images={stageImages} />
 			</div>
 			)
 	}

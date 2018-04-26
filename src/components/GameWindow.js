@@ -17,7 +17,7 @@ class GameWindow extends React.Component {
 	render(){
 		return(
 			<div className='gamewindow'>
-				<Story gameStage = {this.gameStage} changeStage = {this.changeStage} />
+				<Story gameStage = {this.state.gameStage} changeStage = {this.changeStage} />
 			</div>
 			)
 	}
